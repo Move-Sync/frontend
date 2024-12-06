@@ -26,6 +26,8 @@ interface TrainData {
   遅延情報: string;
 }
 
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+
 export default function Home() {
   //天気情報に関する変数の状態管理
   const [currentLocation, setCurrentLocation] = useState('');
@@ -68,12 +70,12 @@ export default function Home() {
   const fetchWeather = async () => {
     try {
       const responses = await Promise.all([
-        fetch('http://127.0.0.1:5000/api/weather', {
+        fetch(`${API_BASE_URL}/api/weather`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ city: currentLocation }),
         }),
-        fetch('http://127.0.0.1:5000/api/weather', {
+        fetch(`${API_BASE_URL}/api/weather`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ city: destination }),
@@ -106,7 +108,7 @@ export default function Home() {
   // スケジュールデータを取得
   const fetchSchedule = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/schedule', {
+      const response = await fetch(`${API_BASE_URL}/api/schedule`, {
         method: 'GET',
       });
 
