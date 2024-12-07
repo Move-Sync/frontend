@@ -17,14 +17,7 @@ import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-
-interface TrainData {
-  id: number;
-  departure_time: string;
-  arrival_time: string;
-  destination: string;
-  遅延情報: string;
-}
+import { TrainData } from './types/types'; 
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
