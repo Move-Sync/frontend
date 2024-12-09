@@ -146,7 +146,7 @@ export default function Home() {
             <DialogHeader>
               <DialogTitle>設定</DialogTitle>
               <DialogDescription>
-                乗車駅や降車駅の設定をすることができます。
+                現在地や目的地、乗車駅や降車駅の設定をすることができます。例:Funabashi
               </DialogDescription>
             </DialogHeader>
             <div className='grid gap-4 py-4'>
